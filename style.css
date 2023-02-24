@@ -1,31 +1,53 @@
 .ring-container {
     position: relative;
-}
-
-.circle {
-    width: 15px;
-    height: 15px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .active {
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+  }
+  
+  .circle {
+    width: 5%;
+    height: 5%;
     background-color: #62bd19;
     border-radius: 50%;
     position: absolute;
-    top: 23px;
-    left: 23px;
-}
-
-.ringring {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .ringring {
     border: 3px solid #62bd19;
-    -webkit-border-radius: 30px;
-    height: 25px;
-    width: 25px;
+    border-radius: 50%;
+    height: 15%;
+    width: 15%;
     position: absolute;
-    left: 15px;
-    top: 15px;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite; 
-    opacity: 0.0
-}
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.0;
+  }
+  
+  @keyframes pulsate {
+    0% {
+      transform: scale(0.1);
+      opacity: 0.0;
+    }
+    50% {
+      opacity: 1.0;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0.0;
+    }
+  }
+  
